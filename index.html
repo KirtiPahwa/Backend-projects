@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <script>
+    function func() {
+      var n = document.getElementsByName("name")[0].value;
+      var ad = document.getElementsByName("address")[0].value;
+      console.log(n);
+      console.log(ad);
+      if (/\d/.test(n) == true) {
+        alert("There should not be any number in name");
+      }
+      if (/\d/.test(ad) == true) {
+        alert("There should not be any number in address");
+      }
+    }
+  </script>
+  <body>
+    <form
+      action="/submitting"
+      method="POST"
+      style="width: 50%; margin: 20px auto; background-color: #d6eeee"
+    >
+      <legend class="text-center text-primary" style="font-size: 30px">
+        Score Card
+      </legend>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Student Id:</label>
+        <input
+          type="number"
+          class="form-control"
+          min="2000000000"
+          max="2020000000"
+          name="id"
+          required
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          placeholder="Enter the Id Number"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Name:</label>
+        <input
+          type="text"
+          minlength="3"
+          class="form-control"
+          required
+          name="name"
+          id="exampleInputEmail1"
+          onchange="func()"
+          aria-describedby="emailHelp"
+          placeholder="Enter your Name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Address</label>
+        <input
+          type="text"
+          class="form-control"
+          required
+          onchange="func()"
+          name="address"
+          minlength="10"
+          id="exampleInputPassword1"
+          placeholder="Enter your address"
+        />
+      </div>
+      <br />
+      <div class="form-group">
+        <label for="exampleInputPassword1">Subject Marks:</label><br />
+        <label for="exampleInputPassword1">English:</label>
+        <input
+          type="number"
+          class="form-control"
+          id="exampleInputPassword1"
+          required
+          name="english"
+          min="0"
+          max="100"
+          placeholder="Enter your English marks"
+        />
+        <label for="exampleInputPassword1">Hindi:</label>
+        <input
+          type="number"
+          class="form-control"
+          required
+          name="hindi"
+          min="0"
+          max="100"
+          id="exampleInputPassword1"
+          placeholder="Enter your Hindi marks"
+        />
+      </div>
+      <label for="exampleInputPassword1">Maths:</label>
+      <input
+        type="number"
+        min="0"
+        max="100"
+        name="maths"
+        class="form-control"
+        id="exampleInputPassword1"
+        required
+        placeholder="Enter your Maths marks"
+      />
+      <label for="exampleInputPassword1">Punjabi:</label>
+      <input
+        type="number"
+        min="0"
+        max="100"
+        name="punjabi"
+        class="form-control"
+        id="exampleInputPassword1"
+        required
+        placeholder="Enter your Punjabi marks"
+      />
+      <label for="exampleInputPassword1">Science:</label>
+      <input
+        type="number"
+        min="0"
+        max="100"
+        class="form-control"
+        id="exampleInputPassword1"
+        required
+        name="science"
+        placeholder="Enter your Science marks"
+      />
+      <button
+        onclick="func()"
+        type="submit"
+        style="margin-top: 10px"
+        class="btn btn-primary"
+      >
+        Submit
+      </button>
+    </form>
+  </body>
+</html>
